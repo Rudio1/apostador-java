@@ -15,6 +15,7 @@ public class ApostadorController {
     public ResponseEntity salvarApostador(@RequestBody Apostador apostador){
 
         System.out.println("Apostador: " + apostador.getNome());
+
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
     }
