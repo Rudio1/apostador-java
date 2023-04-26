@@ -19,4 +19,8 @@ public class Apostador {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+    public ApostadorBD toConvert(){
+        return new ApostadorBD(nome, email);
+    }
 }
