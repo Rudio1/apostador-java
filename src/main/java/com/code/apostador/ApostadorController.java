@@ -21,7 +21,6 @@ public class ApostadorController {
         try {
             ApostadorBD apostadorBD = apostador.toConvert();
             apostadorRepository.save(apostadorBD);
-
             return ResponseEntity.status(HttpStatus.CREATED).build();
         }catch(Exception ex){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
