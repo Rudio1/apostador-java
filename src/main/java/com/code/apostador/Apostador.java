@@ -1,10 +1,17 @@
 package com.code.apostador;
 
-public class Apostador {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+
+public class Apostador {
+    @JsonProperty("nome")
     private String nome;
+    @JsonProperty("email")
     private String email;
 
+    public Apostador(){
+
+    }
     public String getNome(){
         return this.nome;
     }
@@ -20,7 +27,10 @@ public class Apostador {
                 '}';
     }
 
-    public ApostadorBD toConvert(){
-        return new ApostadorBD(nome, email);
+    public ApostadorBD toConvert() {
+        ApostadorBD apostadorBD = new ApostadorBD();
+        apostadorBD.setNome(this.nome);
+        apostadorBD.setEmail(this.email);
+        return apostadorBD;
     }
 }
